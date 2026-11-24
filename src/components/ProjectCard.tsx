@@ -5,70 +5,62 @@ import type { AIProject } from '../data/projects';
 
 export function ProjectCard({ project }: { project: AIProject }) {
   return (
-    <article className="game-card game-card-interactive flex h-full flex-col justify-between rounded-2xl p-5">
+    <article className="studio-card studio-card-hover flex h-full flex-col justify-between rounded-2xl p-6">
       <div>
-        {/* Top Metadata Row */}
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <span
-            className="inline-flex items-center rounded-lg border border-[#352219] px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-wide text-white"
-            style={{ backgroundColor: project.accentHex }}
-          >
+          <span className="inline-flex items-center rounded-md border border-[#1746A2]/20 bg-[#EEF3FC] px-2.5 py-0.5 font-mono text-[11px] font-semibold text-[#1746A2]">
             {project.category}
           </span>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2">
             {project.liveUrl ? (
-              <span className="inline-flex items-center gap-1 rounded-lg border border-[#245B45]/30 bg-[#EBF4EE] px-2 py-0.5 font-mono text-[11px] font-bold text-[#245B45]">
+              <span className="inline-flex items-center gap-1 rounded-md border border-[#0D6E4E]/25 bg-[#E8F5EF] px-2 py-0.5 font-mono text-[11px] font-semibold text-[#0D6E4E]">
                 <Globe className="h-3 w-3" />
-                HOSTED
+                Live
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1 rounded-lg border border-[#673B70]/30 bg-[#F5EDF6] px-2 py-0.5 font-mono text-[11px] font-bold text-[#673B70]">
+              <span className="inline-flex items-center gap-1 rounded-md border border-[#D2CBB9] bg-[#F2EFE8] px-2 py-0.5 font-mono text-[11px] font-semibold text-[#525D70]">
                 <Code2 className="h-3 w-3" />
-                SOURCE
+                Source
               </span>
             )}
-            <span className="font-mono text-xs font-bold text-[#6C5B50]">{project.year}</span>
+            <span className="font-mono text-xs text-[#525D70]">{project.year}</span>
           </div>
         </div>
 
-        {/* Title & Tagline */}
-        <h3 className="mt-3 font-display text-xl font-extrabold leading-snug text-[#352219]">
-          <Link to={`/projects/${project.slug}`} className="hover:text-[#C94F16]">
+        <h3 className="mt-3.5 font-display text-lg font-bold leading-snug text-[#102A56]">
+          <Link to={`/projects/${project.slug}`} className="hover:text-[#1746A2]">
             {project.title}
           </Link>
         </h3>
-        <p className="mt-1 text-xs font-bold text-[#A83D10]">{project.tagline}</p>
+        <p className="mt-1 text-xs font-semibold text-[#8A6522]">{project.tagline}</p>
 
-        {/* Full Description (always shown for both hosted and unhosted projects) */}
-        <p className="mt-3 text-sm leading-relaxed text-[#6C5B50]">{project.description}</p>
+        <p className="mt-3 text-sm leading-relaxed text-[#525D70]">{project.description}</p>
 
-        {/* Stack Pills */}
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.stack.slice(0, 5).map((tech) => (
             <span
               key={tech}
-              className="game-pill rounded-md px-2 py-0.5 font-mono text-[11px] font-semibold"
+              className="rounded-md border border-[#E5E0D5] bg-[#FAF8F4] px-2 py-0.5 font-mono text-[11px] font-medium text-[#102A56]"
             >
               {tech}
             </span>
           ))}
           {project.stack.length > 5 && (
-            <span className="game-pill rounded-md px-2 py-0.5 font-mono text-[11px] font-semibold">
+            <span className="rounded-md border border-[#E5E0D5] bg-[#FAF8F4] px-2 py-0.5 font-mono text-[11px] font-medium text-[#525D70]">
               +{project.stack.length - 5}
             </span>
           )}
         </div>
       </div>
 
-      {/* Action Footer */}
-      <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-[#EADBCB] pt-4">
+      <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-[#E5E0D5] pt-4">
         {project.liveUrl && (
           <a
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="game-btn rounded-xl bg-[#B5430F] px-3 py-1.5 text-xs text-white"
+            className="studio-btn rounded-lg bg-[#1746A2] px-3 py-1.5 text-xs text-white hover:bg-[#103580]"
           >
             Live Demo
             <ExternalLink className="h-3.5 w-3.5" />
@@ -79,7 +71,7 @@ export function ProjectCard({ project }: { project: AIProject }) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="game-btn rounded-xl bg-[#F9EBDC] px-3 py-1.5 text-xs text-[#352219]"
+            className="studio-btn rounded-lg border border-[#D2CBB9] bg-white px-3 py-1.5 text-xs text-[#102A56] hover:border-[#1746A2]"
           >
             <GitHubIcon className="h-3.5 w-3.5" />
             GitHub
@@ -87,9 +79,9 @@ export function ProjectCard({ project }: { project: AIProject }) {
         )}
         <Link
           to={`/projects/${project.slug}`}
-          className="ml-auto inline-flex items-center gap-1 font-mono text-xs font-bold text-[#352219] hover:text-[#C94F16]"
+          className="ml-auto inline-flex items-center gap-1 font-mono text-xs font-semibold text-[#1746A2] hover:underline"
         >
-          Dossier
+          Case Study
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>

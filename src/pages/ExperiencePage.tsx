@@ -3,55 +3,53 @@ import { CREDENTIALS, EXPERIENCE_QUESTS, PROFILE } from '../data/profile';
 
 export function ExperiencePage() {
   return (
-    <div className="paper-grid-bg min-h-screen pb-16 pt-10">
+    <div className="min-h-screen bg-[#FAF8F4] pb-16 pt-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        {/* Header */}
-        <div className="game-card rounded-2xl bg-white p-6 sm:p-8">
-          <span className="inline-block rounded-lg border border-[#352219] bg-[#F9EBDC] px-2.5 py-1 font-mono text-xs font-bold uppercase text-[#A83D10]">
-            AI Engineering Campaign Log
+        <div className="studio-card rounded-2xl p-6 sm:p-8">
+          <span className="inline-block rounded-md border border-[#1746A2]/20 bg-[#EEF3FC] px-2.5 py-1 font-mono text-xs font-semibold uppercase text-[#1746A2]">
+            Engineering Experience &amp; Track Record
           </span>
-          <h1 className="mt-3 font-display text-3xl font-extrabold text-[#352219] sm:text-4xl">
-            Experience, AI Systems &amp; Hackathons
+          <h1 className="mt-3 font-display text-3xl font-extrabold text-[#102A56] sm:text-4xl">
+            AI Systems, Automation &amp; Hackathons
           </h1>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#6C5B50] sm:text-base">
-            From zero-cost autonomous AI operating systems and 750+ curated agent skills on GitHub
-            to live Vercel digital twins and 24-hour hackathon prototypes — all built while pursuing
-            my {PROFILE.academicStatus}.
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#525D70] sm:text-base">
+            Hands-on execution across zero-cost multi-model AI operating systems, 750+ curated
+            agent skills, live Vercel digital twins, and 24-hour hackathon prototypes — built
+            alongside my {PROFILE.academicStatus}.
           </p>
         </div>
 
-        {/* Main Campaign Quests */}
         <section className="mt-10 space-y-6">
           <div className="flex items-center gap-2">
-            <Briefcase className="h-5 w-5 text-[#C94F16]" />
-            <h2 className="font-display text-2xl font-extrabold text-[#352219]">
+            <Briefcase className="h-5 w-5 text-[#1746A2]" />
+            <h2 className="font-display text-2xl font-extrabold text-[#102A56]">
               AI Engineering Timeline
             </h2>
           </div>
 
           <div className="space-y-5">
             {EXPERIENCE_QUESTS.map((quest) => (
-              <article key={quest.id} className="game-card rounded-2xl bg-white p-6">
+              <article key={quest.id} className="studio-card rounded-2xl p-6">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="rounded-lg border border-[#352219] bg-[#C94F16] px-2.5 py-0.5 font-mono text-[11px] font-bold uppercase text-white">
+                  <span className="rounded-md border border-[#1746A2]/20 bg-[#EEF3FC] px-2.5 py-0.5 font-mono text-[11px] font-semibold uppercase text-[#1746A2]">
                     {quest.badge}
                   </span>
-                  <span className="font-mono text-xs font-bold text-[#6C5B50]">{quest.period}</span>
+                  <span className="font-mono text-xs font-medium text-[#525D70]">{quest.period}</span>
                 </div>
 
-                <h3 className="mt-3 font-display text-2xl font-extrabold text-[#352219]">
+                <h3 className="mt-3 font-display text-xl font-extrabold text-[#102A56] sm:text-2xl">
                   {quest.role}
                 </h3>
-                <p className="text-sm font-bold text-[#A83D10]">{quest.context}</p>
-                <p className="mt-2.5 text-sm leading-relaxed text-[#6C5B50]">{quest.summary}</p>
+                <p className="text-sm font-semibold text-[#8A6522]">{quest.context}</p>
+                <p className="mt-2.5 text-sm leading-relaxed text-[#525D70]">{quest.summary}</p>
 
                 <ul className="mt-4 space-y-2">
                   {quest.achievements.map((ach) => (
                     <li
                       key={ach}
-                      className="flex items-start gap-2.5 rounded-xl border border-[#EADBCB] bg-[#FFF7EC] p-3 text-sm text-[#352219]"
+                      className="flex items-start gap-2.5 rounded-xl border border-[#E5E0D5] bg-[#FAF8F4] p-3 text-sm text-[#102A56]"
                     >
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#245B45]" />
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0D6E4E]" />
                       <span>{ach}</span>
                     </li>
                   ))}
@@ -61,7 +59,7 @@ export function ExperiencePage() {
                   {quest.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="game-pill rounded-md px-2.5 py-0.5 font-mono text-[11px] font-bold"
+                      className="rounded-md border border-[#E5E0D5] bg-[#F2EFE8] px-2.5 py-0.5 font-mono text-[11px] font-semibold text-[#102A56]"
                     >
                       {tech}
                     </span>
@@ -72,12 +70,11 @@ export function ExperiencePage() {
           </div>
         </section>
 
-        {/* Architecture Pipelines Highlight */}
         <section className="mt-12">
           <div className="flex items-center gap-2">
-            <Layers className="h-5 w-5 text-[#C94F16]" />
-            <h2 className="font-display text-2xl font-extrabold text-[#352219]">
-              Signature AI Architectures Shipped
+            <Layers className="h-5 w-5 text-[#1746A2]" />
+            <h2 className="font-display text-2xl font-extrabold text-[#102A56]">
+              Production AI Architectures
             </h2>
           </div>
 
@@ -85,7 +82,7 @@ export function ExperiencePage() {
             {[
               {
                 name: 'Zero-Cost Multi-Model Failover (KODA)',
-                flow: 'Wake Word / Command → 4-Lane Router → 12 Free OpenCode Models → SQLite Circuit Breaker (<100ms) → SafetyGate (25 Tools)',
+                flow: 'Voice / Prompt → 4-Lane Router → 12 Free OpenCode Models → SQLite Circuit Breaker (<100ms) → SafetyGate (25 Tools)',
                 impact: 'Eliminates single-provider rate-limit failures while enforcing $0.00 API cost.',
               },
               {
@@ -104,41 +101,40 @@ export function ExperiencePage() {
                 impact: 'Connects neural perception and physics math to interactive 3D decision studios.',
               },
             ].map((pipe) => (
-              <div key={pipe.name} className="game-card rounded-2xl bg-white p-5">
-                <h3 className="font-display text-lg font-extrabold text-[#352219]">{pipe.name}</h3>
-                <div className="mt-2.5 rounded-xl border border-[#EADBCB] bg-[#FDF2E4] p-3 font-mono text-xs leading-relaxed text-[#352219]">
+              <div key={pipe.name} className="studio-card rounded-2xl p-5">
+                <h3 className="font-display text-lg font-bold text-[#102A56]">{pipe.name}</h3>
+                <div className="mt-2.5 rounded-xl border border-[#E5E0D5] bg-[#FAF8F4] p-3 font-mono text-xs leading-relaxed text-[#102A56]">
                   {pipe.flow}
                 </div>
-                <p className="mt-2.5 text-sm text-[#6C5B50]">{pipe.impact}</p>
+                <p className="mt-2.5 text-sm text-[#525D70]">{pipe.impact}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Certifications & Hackathons (AI/Software/Analytical only) */}
         <section className="mt-12">
           <div className="flex items-center gap-2">
-            <Award className="h-5 w-5 text-[#C94F16]" />
-            <h2 className="font-display text-2xl font-extrabold text-[#352219]">
+            <Award className="h-5 w-5 text-[#1746A2]" />
+            <h2 className="font-display text-2xl font-extrabold text-[#102A56]">
               Hackathons, Workshops &amp; Verified Credentials
             </h2>
           </div>
 
           <div className="mt-5 grid gap-4 md:grid-cols-2">
             {CREDENTIALS.map((cred) => (
-              <div key={cred.title} className="game-card flex flex-col justify-between rounded-2xl bg-white p-5">
+              <div key={cred.title} className="studio-card flex flex-col justify-between rounded-2xl p-5">
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="rounded-lg border border-[#352219] bg-[#F9EBDC] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase text-[#352219]">
+                    <span className="rounded-md border border-[#E5E0D5] bg-[#FAF8F4] px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase text-[#1746A2]">
                       {cred.kind}
                     </span>
-                    <span className="font-mono text-xs font-bold text-[#6C5B50]">{cred.date}</span>
+                    <span className="font-mono text-xs text-[#525D70]">{cred.date}</span>
                   </div>
-                  <h3 className="mt-2.5 font-display text-lg font-extrabold text-[#352219]">
+                  <h3 className="mt-2.5 font-display text-lg font-bold text-[#102A56]">
                     {cred.title}
                   </h3>
-                  <p className="text-xs font-bold text-[#A83D10]">{cred.issuer}</p>
-                  <p className="mt-2 text-sm text-[#6C5B50]">{cred.summary}</p>
+                  <p className="text-xs font-semibold text-[#8A6522]">{cred.issuer}</p>
+                  <p className="mt-2 text-sm text-[#525D70]">{cred.summary}</p>
                 </div>
 
                 {cred.link && (
@@ -146,7 +142,7 @@ export function ExperiencePage() {
                     href={cred.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex w-fit items-center gap-1.5 font-mono text-xs font-bold text-[#C94F16] hover:underline"
+                    className="mt-4 inline-flex w-fit items-center gap-1.5 font-mono text-xs font-semibold text-[#1746A2] hover:underline"
                   >
                     Verify Credential
                     <ExternalLink className="h-3.5 w-3.5" />

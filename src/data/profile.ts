@@ -43,6 +43,15 @@ export const PROFILE = {
   handle: 'KARTHIKEYASHARMA672',
   title: 'AI Systems & Agentic Architect',
   academicStatus: '4th-Year B.Tech ECE Student (Class of 2027)',
+  jobStatus: 'Open to Work · Seeking AI Engineer, Agentic AI & Applied ML Roles / Internships',
+  targetRoles: [
+    'AI Systems / Agentic AI Engineer',
+    'Generative AI & LLM Application Developer',
+    'Computer Vision & Applied ML Engineer',
+    'Full-Stack AI Product Engineer',
+  ],
+  availabilityNote:
+    'Actively applying for AI Engineering internships and entry-level / 2027 graduate roles (Remote, Hybrid, or On-site — Worldwide & India). Available for technical interviews immediately.',
   location: 'Kadapa, Andhra Pradesh & Phagwara, Punjab, India',
   email: 'karthikeyasharma672@gmail.com',
   phone: '+91 949 262 3987',
@@ -59,17 +68,17 @@ export const PROFILE = {
     },
   ],
   bioHeadline:
-    'Building zero-cost agentic operating systems, multi-agent AI simulators, computer vision pipelines, and interactive 3D WebGL intelligence studios.',
+    '4th-Year B.Tech ECE engineer actively seeking AI roles — building zero-cost agentic systems, multi-agent simulators, computer vision pipelines, and 3D WebGL digital twins.',
   bioStory: [
-    'I am A. Praneeth Karthikeya Sharma, a 4th-year B.Tech Electronics & Communication Engineering undergraduate at Lovely Professional University (Class of 2027) whose engineering focus is dedicated to Artificial Intelligence, autonomous agentic workflows, and interactive 3D AI experiences.',
-    'Rather than stopping at prompt wrappers, I architect complete AI products: multi-model circuit-breaker routers (KODA), multi-agent C-suite debate engines (Nexus Factory), client-side codebase reverse-engineering labs (BLACKBOX), evidence-grounded historical simulations (ARTISAN AI), YOLO computer vision detectors, and WebGL2 digital twins (CityOS, MirrorWorld, Archon, Reality Engine, NeuroSpace).',
-    'Across GitHub, I maintain 35+ AI and 3D software repositories alongside a 4-tier open-source AI Agent Skills Ecosystem spanning 750+ curated skills and 1,000+ programmatically generated engineering playbooks.',
+    'I am A. Praneeth Karthikeya Sharma, a 4th-year B.Tech Electronics & Communication Engineering undergraduate at Lovely Professional University (Class of 2027), actively applying for AI Engineering internships and entry-level roles across Agentic AI, LLM Systems, and Applied Machine Learning.',
+    'Rather than stopping at prompt wrappers, I architect complete, production-verified AI software: multi-model circuit-breaker routers (KODA), multi-agent C-suite debate engines (Nexus Factory), client-side codebase reverse-engineering labs (BLACKBOX), evidence-grounded historical simulations (ARTISAN AI), YOLO computer vision detectors, and WebGL2 digital twins (CityOS, MirrorWorld, Archon, Reality Engine, NeuroSpace).',
+    'Across GitHub, I maintain 40 AI and 3D software projects (32 deployed live) alongside an open-source 4-tier AI Agent Skills Ecosystem spanning 750+ curated skills and 1,000+ programmatically generated engineering playbooks.',
   ],
   stats: [
-    { label: 'AI & 3D Projects Built', value: '40' },
-    { label: 'Live Hosted AI Apps', value: '32' },
-    { label: 'Agent Skills Curated', value: '750+' },
-    { label: 'B.Tech Standing', value: '4th Yr' },
+    { label: 'AI & 3D Projects', value: '40' },
+    { label: 'Live Hosted Apps', value: '32' },
+    { label: 'AI Agent Skills', value: '750+' },
+    { label: 'Graduating Class', value: '2027' },
   ],
 };
 

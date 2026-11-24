@@ -10,17 +10,17 @@ export function ProjectDetailPage() {
 
   if (!project) {
     return (
-      <div className="paper-grid-bg min-h-[70vh] px-4 py-20 text-center">
-        <div className="game-card mx-auto max-w-lg rounded-2xl p-8">
-          <h1 className="font-display text-2xl font-extrabold text-[#352219]">
-            Mission Dossier Not Found
+      <div className="min-h-[70vh] bg-[#FAF8F4] px-4 py-20 text-center">
+        <div className="studio-card mx-auto max-w-lg rounded-2xl p-8">
+          <h1 className="font-display text-2xl font-extrabold text-[#102A56]">
+            Case Study Not Found
           </h1>
-          <p className="mt-2 text-sm text-[#6C5B50]">
-            That project slug does not exist in the AI Armory.
+          <p className="mt-2 text-sm text-[#525D70]">
+            The requested project could not be located in the AI portfolio archive.
           </p>
           <Link
             to="/projects"
-            className="game-btn mt-5 rounded-xl bg-[#B5430F] px-4 py-2 text-sm text-white"
+            className="studio-btn mt-5 rounded-xl bg-[#1746A2] px-4 py-2 text-sm text-white"
           >
             Back to All AI Projects
           </Link>
@@ -34,54 +34,50 @@ export function ProjectDetailPage() {
   const nextProject = index < AI_PROJECTS.length - 1 ? AI_PROJECTS[index + 1] : AI_PROJECTS[0];
 
   return (
-    <div className="paper-grid-bg min-h-screen pb-16 pt-8">
+    <div className="min-h-screen bg-[#FAF8F4] pb-16 pt-8">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <Link
           to="/projects"
-          className="inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase text-[#352219] hover:text-[#C94F16]"
+          className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold uppercase text-[#1746A2] hover:underline"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to AI Project Armory
+          Back to All AI Projects
         </Link>
 
-        <article className="game-card mt-4 rounded-2xl bg-white p-6 sm:p-10">
+        <article className="studio-card mt-4 rounded-2xl p-6 sm:p-10">
           <div className="flex flex-wrap items-center gap-2">
-            <span
-              className="rounded-lg border border-[#352219] px-3 py-1 font-mono text-xs font-bold uppercase text-white"
-              style={{ backgroundColor: project.accentHex }}
-            >
+            <span className="rounded-md border border-[#1746A2]/20 bg-[#EEF3FC] px-3 py-1 font-mono text-xs font-semibold text-[#1746A2]">
               {project.category}
             </span>
             {zone && (
-              <span className="rounded-lg border border-[#EADBCB] bg-[#FFF7EC] px-3 py-1 font-mono text-xs font-bold text-[#352219]">
-                {zone.number}: {zone.name}
+              <span className="rounded-md border border-[#E5E0D5] bg-[#FAF8F4] px-3 py-1 font-mono text-xs font-medium text-[#525D70]">
+                {zone.name}
               </span>
             )}
-            <span className="ml-auto font-mono text-xs font-bold text-[#6C5B50]">
+            <span className="ml-auto font-mono text-xs font-medium text-[#525D70]">
               {project.hostingLabel} · {project.year}
             </span>
           </div>
 
-          <h1 className="mt-4 font-display text-3xl font-extrabold text-[#352219] sm:text-4xl">
+          <h1 className="mt-4 font-display text-3xl font-extrabold text-[#102A56] sm:text-4xl">
             {project.title}
           </h1>
-          <p className="mt-2 text-base font-bold text-[#A83D10]">{project.tagline}</p>
+          <p className="mt-2 text-base font-semibold text-[#8A6522]">{project.tagline}</p>
 
-          {/* Action Buttons */}
           <div className="mt-6 flex flex-wrap gap-3">
             {project.liveUrl ? (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="game-btn rounded-xl bg-[#B5430F] px-5 py-2.5 text-sm text-white"
+                className="studio-btn rounded-xl bg-[#1746A2] px-5 py-2.5 text-sm text-white hover:bg-[#103580]"
               >
                 Open Live Hosted App
                 <ExternalLink className="h-4 w-4" />
               </a>
             ) : (
-              <span className="inline-flex items-center gap-2 rounded-xl border-2 border-[#673B70]/40 bg-[#F5EDF6] px-4 py-2.5 font-mono text-xs font-bold text-[#673B70]">
-                Local / Self-Hosted Runtime — Full Architecture Below
+              <span className="inline-flex items-center gap-2 rounded-xl border border-[#E5E0D5] bg-[#F2EFE8] px-4 py-2.5 font-mono text-xs font-semibold text-[#525D70]">
+                Local / Self-Hosted Runtime — Architecture Documented Below
               </span>
             )}
 
@@ -90,7 +86,7 @@ export function ProjectDetailPage() {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="game-btn rounded-xl bg-[#F9EBDC] px-5 py-2.5 text-sm text-[#352219]"
+                className="studio-btn rounded-xl border border-[#D2CBB9] bg-white px-5 py-2.5 text-sm text-[#102A56] hover:border-[#1746A2]"
               >
                 <GitHubIcon className="h-4 w-4" />
                 View GitHub Source
@@ -98,55 +94,48 @@ export function ProjectDetailPage() {
             )}
           </div>
 
-          {/* Overview & Architecture */}
-          <div className="mt-8 grid gap-6 border-t border-[#EADBCB] pt-8 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 border-t border-[#E5E0D5] pt-8 md:grid-cols-2">
             <div>
-              <h2 className="font-display text-xl font-extrabold text-[#352219]">
-                Project Overview
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-[#6C5B50] sm:text-base">
+              <h2 className="font-display text-lg font-bold text-[#102A56]">Project Overview</h2>
+              <p className="mt-3 text-sm leading-relaxed text-[#525D70] sm:text-base">
                 {project.description}
               </p>
             </div>
-            <div className="rounded-2xl border-2 border-[#352219] bg-[#FFF7EC] p-5">
-              <div className="flex items-center gap-2 font-display text-lg font-extrabold text-[#352219]">
-                <Cpu className="h-5 w-5 text-[#C94F16]" />
+            <div className="rounded-2xl border border-[#E5E0D5] bg-[#FAF8F4] p-5">
+              <div className="flex items-center gap-2 font-display text-base font-bold text-[#102A56]">
+                <Cpu className="h-5 w-5 text-[#1746A2]" />
                 System Architecture
               </div>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#6C5B50]">
+              <p className="mt-2.5 text-sm leading-relaxed text-[#525D70]">
                 {project.architectureSummary}
               </p>
             </div>
           </div>
 
-          {/* Key Highlights */}
           <div className="mt-8">
-            <h2 className="font-display text-xl font-extrabold text-[#352219]">
-              Verified Highlights &amp; Impact
+            <h2 className="font-display text-lg font-bold text-[#102A56]">
+              Verified Engineering Highlights
             </h2>
             <ul className="mt-4 space-y-2.5">
               {project.highlights.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-2.5 rounded-xl border border-[#EADBCB] bg-[#FDF2E4] p-3 text-sm font-medium text-[#352219]"
+                  className="flex items-start gap-2.5 rounded-xl border border-[#E5E0D5] bg-[#FAF8F4] p-3.5 text-sm font-medium text-[#102A56]"
                 >
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#245B45]" />
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0D6E4E]" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Tech Stack */}
           <div className="mt-8">
-            <h2 className="font-display text-xl font-extrabold text-[#352219]">
-              AI &amp; Engineering Stack
-            </h2>
+            <h2 className="font-display text-lg font-bold text-[#102A56]">Technology Stack</h2>
             <div className="mt-3 flex flex-wrap gap-2">
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-xl border-2 border-[#352219] bg-[#FFF7EC] px-3 py-1 font-mono text-xs font-bold text-[#352219]"
+                  className="rounded-lg border border-[#E5E0D5] bg-[#FAF8F4] px-3 py-1 font-mono text-xs font-semibold text-[#102A56]"
                 >
                   {tech}
                 </span>
@@ -155,18 +144,17 @@ export function ProjectDetailPage() {
           </div>
         </article>
 
-        {/* Prev / Next Navigation */}
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <Link
             to={`/projects/${prevProject.slug}`}
-            className="game-card game-card-interactive flex items-center gap-3 rounded-2xl p-4 no-underline"
+            className="studio-card studio-card-hover flex items-center gap-3 rounded-2xl p-4 no-underline"
           >
-            <ArrowLeft className="h-5 w-5 shrink-0 text-[#C94F16]" />
+            <ArrowLeft className="h-5 w-5 shrink-0 text-[#1746A2]" />
             <div>
-              <div className="font-mono text-[10px] font-bold uppercase text-[#6C5B50]">
-                Previous Mission
+              <div className="font-mono text-[10px] font-semibold uppercase text-[#525D70]">
+                Previous Case Study
               </div>
-              <div className="font-display text-sm font-extrabold text-[#352219]">
+              <div className="font-display text-sm font-bold text-[#102A56]">
                 {prevProject.title}
               </div>
             </div>
@@ -174,17 +162,17 @@ export function ProjectDetailPage() {
 
           <Link
             to={`/projects/${nextProject.slug}`}
-            className="game-card game-card-interactive flex items-center justify-end gap-3 rounded-2xl p-4 text-right no-underline"
+            className="studio-card studio-card-hover flex items-center justify-end gap-3 rounded-2xl p-4 text-right no-underline"
           >
             <div>
-              <div className="font-mono text-[10px] font-bold uppercase text-[#6C5B50]">
-                Next Mission
+              <div className="font-mono text-[10px] font-semibold uppercase text-[#525D70]">
+                Next Case Study
               </div>
-              <div className="font-display text-sm font-extrabold text-[#352219]">
+              <div className="font-display text-sm font-bold text-[#102A56]">
                 {nextProject.title}
               </div>
             </div>
-            <ArrowRight className="h-5 w-5 shrink-0 text-[#C94F16]" />
+            <ArrowRight className="h-5 w-5 shrink-0 text-[#1746A2]" />
           </Link>
         </div>
       </div>

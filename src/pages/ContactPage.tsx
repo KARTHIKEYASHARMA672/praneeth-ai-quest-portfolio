@@ -1,12 +1,12 @@
 import { useState, type FormEvent } from 'react';
-import { Mail, Phone, MapPin, Send, Check, Copy } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Check, Copy, Briefcase } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '../components/BrandIcons';
 import { PROFILE } from '../data/profile';
 
 export function ContactPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [topic, setTopic] = useState('AI Engineering Internship / Role');
+  const [topic, setTopic] = useState('AI Engineering Internship / Full-Time Role');
   const [message, setMessage] = useState('');
   const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -19,63 +19,63 @@ export function ContactPage() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`[AI Portfolio] ${topic} — from ${name || 'Visitor'}`);
+    const subject = encodeURIComponent(`[AI Portfolio Inquiry] ${topic} — from ${name || 'Recruiter'}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\nMessage:\n${message}`,
+      `Name: ${name}\nEmail: ${email}\nInquiry Type: ${topic}\n\nMessage:\n${message}`,
     );
     window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
   return (
-    <div className="paper-grid-bg min-h-screen pb-16 pt-10">
+    <div className="min-h-screen bg-[#FAF8F4] pb-16 pt-10">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="game-card rounded-2xl bg-white p-6 sm:p-8">
-          <span className="inline-block rounded-lg border border-[#DEC9B4] bg-[#F9EBDC] px-2.5 py-1 font-mono text-xs font-semibold uppercase text-[#A83D10]">
-            Direct Contact &amp; Collaboration
-          </span>
-          <h1 className="mt-3 font-display text-3xl font-extrabold text-[#352219] sm:text-4xl">
-            Let&apos;s Build Intelligent Systems Together
+        <div className="studio-card rounded-2xl p-6 sm:p-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#0D6E4E]/25 bg-[#E8F5EF] px-3 py-1 text-xs font-semibold text-[#0D6E4E]">
+            <Briefcase className="h-3.5 w-3.5" />
+            {PROFILE.jobStatus}
+          </div>
+          <h1 className="mt-3 font-display text-3xl font-extrabold text-[#102A56] sm:text-4xl">
+            Let&apos;s Connect for AI Roles &amp; Collaborations
           </h1>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#6C5B50] sm:text-base">
-            Open to AI Engineering internships, Agentic AI builder roles, Computer Vision / LLM
-            collaborations, and creative 3D WebGL software projects.
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[#525D70] sm:text-base">
+            {PROFILE.availabilityNote}
           </p>
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-12">
-          {/* Direct Channels */}
           <div className="space-y-4 md:col-span-5">
-            <div className="game-card rounded-2xl bg-white p-5">
-              <h2 className="font-display text-lg font-extrabold text-[#352219]">
-                Direct Contact Info
+            <div className="studio-card rounded-2xl p-6">
+              <h2 className="font-display text-lg font-bold text-[#102A56]">
+                Direct Contact Information
               </h2>
 
               <div className="mt-4 space-y-3 text-sm">
-                <div className="flex items-center justify-between gap-2 rounded-xl border border-[#EADBCB] bg-[#FFF7EC] p-3">
+                <div className="flex items-center justify-between gap-2 rounded-xl border border-[#E5E0D5] bg-[#FAF8F4] p-3">
                   <div className="flex items-center gap-2.5 overflow-hidden">
-                    <Mail className="h-4 w-4 shrink-0 text-[#C94F16]" />
-                    <span className="truncate font-mono text-xs font-bold text-[#352219]">
+                    <Mail className="h-4 w-4 shrink-0 text-[#1746A2]" />
+                    <span className="truncate font-mono text-xs font-semibold text-[#102A56]">
                       {PROFILE.email}
                     </span>
                   </div>
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="shrink-0 rounded-lg border border-[#352219] bg-white px-2 py-1 font-mono text-[10px] font-bold text-[#352219] cursor-pointer"
+                    aria-label="Copy email address"
+                    className="shrink-0 rounded-lg border border-[#D2CBB9] bg-white px-2 py-1 font-mono text-[10px] font-semibold text-[#102A56] cursor-pointer hover:border-[#1746A2]"
                   >
-                    {copied ? <Check className="h-3.5 w-3.5 text-[#245B45]" /> : <Copy className="h-3.5 w-3.5" />}
+                    {copied ? <Check className="h-3.5 w-3.5 text-[#0D6E4E]" /> : <Copy className="h-3.5 w-3.5" />}
                   </button>
                 </div>
 
-                <div className="flex items-center gap-2.5 rounded-xl border border-[#EADBCB] bg-[#FFF7EC] p-3">
-                  <Phone className="h-4 w-4 shrink-0 text-[#C94F16]" />
-                  <span className="font-mono text-xs font-bold text-[#352219]">{PROFILE.phone}</span>
+                <div className="flex items-center gap-2.5 rounded-xl border border-[#E5E0D5] bg-[#FAF8F4] p-3">
+                  <Phone className="h-4 w-4 shrink-0 text-[#1746A2]" />
+                  <span className="font-mono text-xs font-semibold text-[#102A56]">{PROFILE.phone}</span>
                 </div>
 
-                <div className="flex items-center gap-2.5 rounded-xl border border-[#EADBCB] bg-[#FFF7EC] p-3">
-                  <MapPin className="h-4 w-4 shrink-0 text-[#C94F16]" />
-                  <span className="text-xs font-semibold text-[#352219]">{PROFILE.location}</span>
+                <div className="flex items-center gap-2.5 rounded-xl border border-[#E5E0D5] bg-[#FAF8F4] p-3">
+                  <MapPin className="h-4 w-4 shrink-0 text-[#1746A2]" />
+                  <span className="text-xs font-medium text-[#102A56]">{PROFILE.location}</span>
                 </div>
               </div>
 
@@ -84,7 +84,7 @@ export function ContactPage() {
                   href={PROFILE.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="game-btn rounded-xl bg-[#352219] px-4 py-2 text-xs text-white"
+                  className="studio-btn rounded-xl bg-[#102A56] px-4 py-2 text-xs text-white hover:bg-[#1746A2]"
                 >
                   <GitHubIcon className="h-4 w-4" />
                   GitHub
@@ -93,7 +93,7 @@ export function ContactPage() {
                   href={PROFILE.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="game-btn rounded-xl bg-[#B5430F] px-4 py-2 text-xs text-white"
+                  className="studio-btn rounded-xl bg-[#1746A2] px-4 py-2 text-xs text-white hover:bg-[#103580]"
                 >
                   <LinkedInIcon className="h-4 w-4" />
                   LinkedIn
@@ -102,15 +102,14 @@ export function ContactPage() {
             </div>
           </div>
 
-          {/* Project Inquiry Form */}
-          <form onSubmit={handleSubmit} className="game-card rounded-2xl bg-white p-6 md:col-span-7">
-            <h2 className="font-display text-lg font-extrabold text-[#352219]">
-              Send an Inquiry
+          <form onSubmit={handleSubmit} className="studio-card rounded-2xl p-6 md:col-span-7">
+            <h2 className="font-display text-lg font-bold text-[#102A56]">
+              Send an Interview / Project Inquiry
             </h2>
 
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="block font-mono text-xs font-bold uppercase text-[#6C5B50]">
+                <label className="block font-mono text-xs font-semibold uppercase text-[#525D70]">
                   Your Name
                 </label>
                 <input
@@ -118,12 +117,12 @@ export function ContactPage() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Alex Rivera"
-                  className="mt-1.5 w-full rounded-xl border-2 border-[#352219] bg-[#FFF7EC] px-3.5 py-2 text-sm text-[#352219] focus:border-[#C94F16] focus:outline-none"
+                  placeholder="Hiring Manager / Recruiter"
+                  className="mt-1.5 w-full rounded-xl border border-[#D2CBB9] bg-[#FAF8F4] px-3.5 py-2 text-sm text-[#102A56] focus:border-[#1746A2] focus:bg-white focus:outline-none"
                 />
               </div>
               <div>
-                <label className="block font-mono text-xs font-bold uppercase text-[#6C5B50]">
+                <label className="block font-mono text-xs font-semibold uppercase text-[#525D70]">
                   Your Email
                 </label>
                 <input
@@ -131,30 +130,30 @@ export function ContactPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
-                  className="mt-1.5 w-full rounded-xl border-2 border-[#352219] bg-[#FFF7EC] px-3.5 py-2 text-sm text-[#352219] focus:border-[#C94F16] focus:outline-none"
+                  placeholder="recruiter@company.com"
+                  className="mt-1.5 w-full rounded-xl border border-[#D2CBB9] bg-[#FAF8F4] px-3.5 py-2 text-sm text-[#102A56] focus:border-[#1746A2] focus:bg-white focus:outline-none"
                 />
               </div>
             </div>
 
             <div className="mt-4">
-              <label className="block font-mono text-xs font-bold uppercase text-[#6C5B50]">
-                Mission Topic
+              <label className="block font-mono text-xs font-semibold uppercase text-[#525D70]">
+                Inquiry Type
               </label>
               <select
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                className="mt-1.5 w-full rounded-xl border-2 border-[#352219] bg-[#FFF7EC] px-3.5 py-2 text-sm font-semibold text-[#352219] focus:border-[#C94F16] focus:outline-none"
+                className="mt-1.5 w-full rounded-xl border border-[#D2CBB9] bg-[#FAF8F4] px-3.5 py-2 text-sm font-medium text-[#102A56] focus:border-[#1746A2] focus:bg-white focus:outline-none"
               >
-                <option>AI Engineering Internship / Role</option>
-                <option>Agentic AI / LLM Automation Project</option>
-                <option>3D WebGL / Digital Twin Collaboration</option>
-                <option>Computer Vision / ML Prototype</option>
+                <option>AI Engineering Internship / Full-Time Role</option>
+                <option>Agentic AI / LLM Workflow Role</option>
+                <option>Computer Vision / Applied ML Role</option>
+                <option>3D WebGL / Digital Twin Engineering</option>
               </select>
             </div>
 
             <div className="mt-4">
-              <label className="block font-mono text-xs font-bold uppercase text-[#6C5B50]">
+              <label className="block font-mono text-xs font-semibold uppercase text-[#525D70]">
                 Message
               </label>
               <textarea
@@ -162,23 +161,23 @@ export function ContactPage() {
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Tell me about the AI system, role, or idea you want to build..."
-                className="mt-1.5 w-full rounded-xl border-2 border-[#352219] bg-[#FFF7EC] px-3.5 py-2 text-sm text-[#352219] focus:border-[#C94F16] focus:outline-none"
+                placeholder="Share role details, interview availability, or AI project scope..."
+                className="mt-1.5 w-full rounded-xl border border-[#D2CBB9] bg-[#FAF8F4] px-3.5 py-2 text-sm text-[#102A56] focus:border-[#1746A2] focus:bg-white focus:outline-none"
               />
             </div>
 
             <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
               <button
                 type="submit"
-                className="game-btn rounded-xl bg-[#B5430F] px-5 py-2.5 text-sm text-white"
+                className="studio-btn rounded-xl bg-[#1746A2] px-5 py-2.5 text-sm text-white hover:bg-[#103580]"
               >
                 <Send className="h-4 w-4" />
                 Send Email
               </button>
 
               {submitted && (
-                <span className="font-mono text-xs font-bold text-[#245B45]">
-                  Mail client triggered! Or copy {PROFILE.email} directly.
+                <span className="font-mono text-xs font-semibold text-[#0D6E4E]">
+                  Email client opened — or copy {PROFILE.email} directly.
                 </span>
               )}
             </div>
