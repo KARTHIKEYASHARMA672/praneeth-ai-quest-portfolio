@@ -1,0 +1,37 @@
+{
+  "name": "praneeth-ai-quest-portfolio",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Interactive 3D AI Systems & Agentic Portfolio of A. Praneeth Karthikeya Sharma — 4th-Year B.Tech ECE Student showcasing 40 AI, Computer Vision, LLM, Automation & 3D WebGL projects.",
+  "homepage": "https://praneeth-ai-quest-portfolio.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KARTHIKEYASHARMA672/praneeth-ai-quest-portfolio.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^1.79.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.7",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  }
+}

@@ -1,0 +1,48 @@
+import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { GameStateProvider } from './context/GameStateContext';
+import { GameNavbar } from './components/GameNavbar';
+import { Footer } from './components/Footer';
+import { OverworldPage } from './pages/OverworldPage';
+import { ProjectsPage } from './pages/ProjectsPage';
+import { ProjectDetailPage } from './pages/ProjectDetailPage';
+import { ExperiencePage } from './pages/ExperiencePage';
+import { AboutPage } from './pages/AboutPage';
+import { ArcadeLabPage } from './pages/ArcadeLabPage';
+import { ContactPage } from './pages/ContactPage';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <GameStateProvider>
+        <ScrollToTop />
+        <div className="flex min-h-screen flex-col bg-[#FFF7EC] text-[#352219]">
+          <GameNavbar />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<OverworldPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+              <Route path="/experience" element={<ExperiencePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/lab" element={<ArcadeLabPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<OverworldPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </GameStateProvider>
+    </BrowserRouter>
+  );
+}
+
+export default App;
