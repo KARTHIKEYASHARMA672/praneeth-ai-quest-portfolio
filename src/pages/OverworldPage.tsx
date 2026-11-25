@@ -33,24 +33,24 @@ export function OverworldPage() {
   const featuredProjects = AI_PROJECTS.filter((p) => p.featured).slice(0, 6);
 
   return (
-    <div className="bg-[#FAF8F4]">
+    <div className="bg-[#FFF7EC]">
       {/* Executive Split Hero + Interactive 3D Neural Studio */}
       <section className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:pt-14">
         <div className="grid items-start gap-10 lg:grid-cols-12">
           {/* Left: Recruiter-First Value Prop */}
           <div className="lg:col-span-6">
-            <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[#0D6E4E]/25 bg-[#E8F5EF] px-3.5 py-1 text-xs font-semibold text-[#0D6E4E]">
-              <span className="h-2 w-2 rounded-full bg-[#0D6E4E]" />
+            <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-[#245B45]/25 bg-[#EBF4EE] px-3.5 py-1 text-xs font-semibold text-[#245B45]">
+              <span className="h-2 w-2 rounded-full bg-[#245B45]" />
               <span>{PROFILE.jobStatus}</span>
             </div>
 
-            <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.12] tracking-tight text-[#102A56] sm:text-5xl">
+            <h1 className="mt-5 font-display text-3xl font-extrabold leading-[1.12] tracking-tight text-[#352219] sm:text-5xl">
               AI Systems Engineer building{' '}
-              <span className="text-[#1746A2]">autonomous agents</span> &amp;{' '}
-              <span className="text-[#1746A2]">3D intelligence</span>.
+              <span className="text-[#C94F16]">autonomous agents</span> &amp;{' '}
+              <span className="text-[#C94F16]">3D intelligence</span>.
             </h1>
 
-            <p className="mt-4 text-base leading-relaxed text-[#525D70] sm:text-lg">
+            <p className="mt-4 text-base leading-relaxed text-[#6C5B50] sm:text-lg">
               I am <strong>{PROFILE.name}</strong>, a{' '}
               <strong>4th-Year B.Tech ECE student (Class of 2027)</strong> actively applying for{' '}
               <strong>AI Engineering, Agentic AI, Applied ML, and Full-Stack LLM roles</strong>.
@@ -62,21 +62,21 @@ export function OverworldPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 to="/projects"
-                className="studio-btn rounded-xl bg-[#1746A2] px-5 py-3 text-sm text-white shadow-sm hover:bg-[#103580]"
+                className="studio-btn rounded-xl bg-[#C94F16] px-5 py-3 text-sm text-white shadow-sm hover:bg-[#A83D10]"
               >
                 Explore 40 AI Projects
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/resume"
-                className="studio-btn rounded-xl border border-[#D2CBB9] bg-white px-5 py-3 text-sm text-[#102A56] hover:border-[#1746A2]"
+                className="studio-btn rounded-xl border border-[#DEC9B4] bg-white px-5 py-3 text-sm text-[#352219] hover:border-[#C94F16]"
               >
-                <FileText className="h-4 w-4 text-[#1746A2]" />
+                <FileText className="h-4 w-4 text-[#C94F16]" />
                 View AI Resume
               </Link>
               <Link
                 to="/contact"
-                className="studio-btn rounded-xl border border-[#D2CBB9] bg-[#F2EFE8] px-5 py-3 text-sm text-[#102A56] hover:border-[#1746A2]"
+                className="studio-btn rounded-xl border border-[#DEC9B4] bg-[#F9EBDC] px-5 py-3 text-sm text-[#352219] hover:border-[#C94F16]"
               >
                 Hire / Contact
               </Link>
@@ -89,21 +89,21 @@ export function OverworldPage() {
                   key={st.label}
                   className="studio-card rounded-xl px-4 py-3 text-left"
                 >
-                  <div className="font-display text-2xl font-extrabold text-[#1746A2]">
+                  <div className="font-display text-2xl font-extrabold text-[#C94F16]">
                     {st.value}
                   </div>
-                  <div className="mt-0.5 text-xs font-medium text-[#525D70]">{st.label}</div>
+                  <div className="mt-0.5 text-xs font-medium text-[#6C5B50]">{st.label}</div>
                 </div>
               ))}
             </div>
 
             {/* Direct Links */}
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-xs font-semibold text-[#525D70]">
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-xs font-semibold text-[#6C5B50]">
               <a
                 href={PROFILE.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 hover:text-[#1746A2]"
+                className="inline-flex items-center gap-1.5 hover:text-[#C94F16]"
               >
                 <GitHubIcon className="h-4 w-4" />
                 github.com/KARTHIKEYASHARMA672
@@ -112,7 +112,7 @@ export function OverworldPage() {
                 href={PROFILE.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 hover:text-[#1746A2]"
+                className="inline-flex items-center gap-1.5 hover:text-[#C94F16]"
               >
                 <LinkedInIcon className="h-4 w-4" />
                 linkedin.com/in/karthikeya-sharma672
@@ -135,8 +135,8 @@ export function OverworldPage() {
                     onClick={() => setActiveZoneId(zone.id)}
                     className={`rounded-lg border px-3 py-1.5 font-mono text-xs font-semibold transition-colors cursor-pointer ${
                       active
-                        ? 'border-[#1746A2] bg-[#1746A2] text-white'
-                        : 'border-[#E5E0D5] bg-white text-[#102A56] hover:border-[#1746A2]'
+                        ? 'border-[#C94F16] bg-[#C94F16] text-white'
+                        : 'border-[#EADBCB] bg-white text-[#352219] hover:border-[#C94F16]'
                     }`}
                   >
                     {DOMAIN_LABELS[zone.id]}
@@ -149,21 +149,21 @@ export function OverworldPage() {
             <div className="studio-card mt-3 rounded-2xl p-4 sm:p-5">
               <div className="flex items-center justify-between gap-2">
                 <div>
-                  <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-[#B88A3B]">
+                  <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-[#A83D10]">
                     {activeZone.subtitle}
                   </span>
-                  <h2 className="font-display text-lg font-bold text-[#102A56]">
+                  <h2 className="font-display text-lg font-bold text-[#352219]">
                     {activeZone.name}
                   </h2>
                 </div>
                 <Link
                   to={activeZone.route}
-                  className="font-mono text-xs font-semibold text-[#1746A2] hover:underline"
+                  className="font-mono text-xs font-semibold text-[#C94F16] hover:underline"
                 >
                   View Section →
                 </Link>
               </div>
-              <p className="mt-1.5 text-xs leading-relaxed text-[#525D70] sm:text-sm">
+              <p className="mt-1.5 text-xs leading-relaxed text-[#6C5B50] sm:text-sm">
                 {activeZone.summary}
               </p>
 
@@ -172,16 +172,16 @@ export function OverworldPage() {
                   {zoneProjects.slice(0, 2).map((proj) => (
                     <div
                       key={proj.slug}
-                      className="flex flex-col justify-between rounded-xl border border-[#E5E0D5] bg-[#FAF8F4] p-3"
+                      className="flex flex-col justify-between rounded-xl border border-[#EADBCB] bg-[#FFF7EC] p-3"
                     >
                       <div>
                         <Link
                           to={`/projects/${proj.slug}`}
-                          className="font-display text-xs font-bold text-[#102A56] hover:text-[#1746A2]"
+                          className="font-display text-xs font-bold text-[#352219] hover:text-[#C94F16]"
                         >
                           {proj.title}
                         </Link>
-                        <p className="mt-0.5 line-clamp-1 text-[11px] text-[#525D70]">
+                        <p className="mt-0.5 line-clamp-1 text-[11px] text-[#6C5B50]">
                           {proj.tagline}
                         </p>
                       </div>
@@ -191,7 +191,7 @@ export function OverworldPage() {
                             href={proj.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-[#0D6E4E] hover:underline"
+                            className="inline-flex items-center gap-1 text-[#245B45] hover:underline"
                           >
                             Live <ExternalLink className="h-3 w-3" />
                           </a>
@@ -201,7 +201,7 @@ export function OverworldPage() {
                             href={proj.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-[#102A56] hover:underline"
+                            className="inline-flex items-center gap-1 text-[#352219] hover:underline"
                           >
                             Code <GitHubIcon className="h-3 w-3" />
                           </a>
@@ -217,13 +217,13 @@ export function OverworldPage() {
       </section>
 
       {/* Core Engineering Pillars */}
-      <section className="border-y border-[#E5E0D5] bg-white py-14">
+      <section className="border-y border-[#EADBCB] bg-white py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="max-w-2xl">
-            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#1746A2]">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#C94F16]">
               Engineering Focus
             </span>
-            <h2 className="mt-1 font-display text-2xl font-extrabold text-[#102A56] sm:text-3xl">
+            <h2 className="mt-1 font-display text-2xl font-extrabold text-[#352219] sm:text-3xl">
               Production AI Capabilities
             </h2>
           </div>
@@ -252,13 +252,13 @@ export function OverworldPage() {
               },
             ].map((item) => (
               <div key={item.title} className="studio-card rounded-2xl p-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#EEF3FC] text-[#1746A2]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FDEEE6] text-[#C94F16]">
                   <item.icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 font-display text-base font-bold text-[#102A56]">
+                <h3 className="mt-4 font-display text-base font-bold text-[#352219]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#525D70]">{item.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-[#6C5B50]">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -270,16 +270,16 @@ export function OverworldPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#1746A2]">
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#C94F16]">
                 Selected Case Studies
               </span>
-              <h2 className="mt-1 font-display text-2xl font-extrabold text-[#102A56] sm:text-3xl">
+              <h2 className="mt-1 font-display text-2xl font-extrabold text-[#352219] sm:text-3xl">
                 Featured AI Systems &amp; Deployments
               </h2>
             </div>
             <Link
               to="/projects"
-              className="studio-btn rounded-xl border border-[#D2CBB9] bg-white px-4 py-2 text-sm text-[#102A56] hover:border-[#1746A2]"
+              className="studio-btn rounded-xl border border-[#DEC9B4] bg-white px-4 py-2 text-sm text-[#352219] hover:border-[#C94F16]"
             >
               Browse All {AI_PROJECTS.length} Projects
               <ArrowRight className="h-4 w-4" />
@@ -295,31 +295,31 @@ export function OverworldPage() {
       </section>
 
       {/* Hiring & Job Application Callout */}
-      <section className="border-t border-[#E5E0D5] bg-white py-14">
+      <section className="border-t border-[#EADBCB] bg-white py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="flex flex-col justify-between gap-6 rounded-2xl border border-[#1746A2]/20 bg-[#102A56] p-8 text-white md:flex-row md:items-center">
+          <div className="flex flex-col justify-between gap-6 rounded-2xl border border-[#C94F16]/20 bg-[#352219] p-8 text-white md:flex-row md:items-center">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 font-mono text-xs font-semibold text-[#D8B56D]">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 font-mono text-xs font-semibold text-[#E6A23C]">
                 <Briefcase className="h-3.5 w-3.5" />
                 ACTIVELY APPLYING · 2026–2027 AI ROLES
               </div>
               <h2 className="mt-3 font-display text-2xl font-extrabold sm:text-3xl">
                 Hiring for AI Engineer, Agentic AI, or Applied ML?
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-[#D8E1F0] sm:text-base">
+              <p className="mt-2 text-sm leading-relaxed text-[#F5E6D8] sm:text-base">
                 {PROFILE.availabilityNote}
               </p>
             </div>
             <div className="flex shrink-0 flex-wrap gap-3">
               <Link
                 to="/resume"
-                className="studio-btn rounded-xl bg-white px-5 py-3 text-sm text-[#102A56] hover:bg-[#FAF8F4]"
+                className="studio-btn rounded-xl bg-white px-5 py-3 text-sm text-[#352219] hover:bg-[#FFF7EC]"
               >
                 View Resume &amp; Role Fit
               </Link>
               <Link
                 to="/contact"
-                className="studio-btn rounded-xl bg-[#D8B56D] px-5 py-3 text-sm text-[#102A56] hover:bg-[#C7A158]"
+                className="studio-btn rounded-xl bg-[#E6A23C] px-5 py-3 text-sm text-[#352219] hover:bg-[#D9932B]"
               >
                 Schedule Interview
                 <ArrowRight className="h-4 w-4" />

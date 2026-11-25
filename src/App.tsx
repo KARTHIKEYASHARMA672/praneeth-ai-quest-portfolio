@@ -22,7 +22,7 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="flex min-h-screen flex-col bg-[#FAF8F4] text-[#102A56]">
+      <div className="flex min-h-screen flex-col bg-[#FFF7EC] text-[#352219]">
         <GameNavbar />
         <main className="flex-1">
           <Routes>

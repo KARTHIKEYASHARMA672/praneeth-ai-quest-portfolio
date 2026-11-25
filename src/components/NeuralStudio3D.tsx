@@ -41,7 +41,7 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
       renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
     } catch {
       container.innerHTML =
-        '<div style="display:flex;height:100%;align-items:center;justify-content:center;padding:24px;text-align:center;color:#102A56;font-weight:600;">Interactive 3D Studio View requires WebGL2. Use the domain tabs below to inspect all 40 AI projects.</div>';
+        '<div style="display:flex;height:100%;align-items:center;justify-content:center;padding:24px;text-align:center;color:#352219;font-weight:600;">Interactive 3D Studio View requires WebGL2. Use the domain tabs below to inspect all 40 AI projects.</div>';
       return;
     }
 
@@ -56,7 +56,7 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
     container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('#F3EFE6');
+    scene.background = new THREE.Color('#F7E8D4');
 
     const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 100);
     camera.position.set(0, 5.2, 11.5);
@@ -83,14 +83,14 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
     keyLight.shadow.mapSize.height = 1024;
     scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight('#D8B56D', 0.65);
+    const rimLight = new THREE.DirectionalLight('#E6A23C', 0.65);
     rimLight.position.set(-8, 4, -6);
     scene.add(rimLight);
 
     // Subtle Architectural Plinth Floor
     const floor = new THREE.Mesh(
       new THREE.CylinderGeometry(5.6, 5.8, 0.25, 64),
-      new THREE.MeshStandardMaterial({ color: '#FAF8F4', roughness: 0.85, metalness: 0.05 }),
+      new THREE.MeshStandardMaterial({ color: '#FFF7EC', roughness: 0.85, metalness: 0.05 }),
     );
     floor.position.y = -2.2;
     floor.receiveShadow = true;
@@ -98,7 +98,7 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
 
     const floorRing = new THREE.Mesh(
       new THREE.TorusGeometry(5.5, 0.03, 12, 72),
-      new THREE.MeshStandardMaterial({ color: '#D2CBB9', roughness: 0.5, metalness: 0.3 }),
+      new THREE.MeshStandardMaterial({ color: '#DEC9B4', roughness: 0.5, metalness: 0.3 }),
     );
     floorRing.rotation.x = Math.PI / 2;
     floorRing.position.y = -2.06;
@@ -107,14 +107,14 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
     // Central Sculpted AI Systems Core (Sapphire + Champagne Brass)
     const coreGroup = new THREE.Group();
     const sapphireMat = new THREE.MeshPhysicalMaterial({
-      color: '#1746A2',
+      color: '#C94F16',
       roughness: 0.18,
       metalness: 0.25,
       clearcoat: 1.0,
       clearcoatRoughness: 0.08,
     });
     const brassMat = new THREE.MeshStandardMaterial({
-      color: '#C79B4B',
+      color: '#E6A23C',
       roughness: 0.28,
       metalness: 0.78,
     });
@@ -124,7 +124,7 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
       metalness: 0.1,
     });
     const navyMat = new THREE.MeshStandardMaterial({
-      color: '#102A56',
+      color: '#352219',
       roughness: 0.4,
       metalness: 0.4,
     });
@@ -135,7 +135,7 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
 
     const coreCage = new THREE.Mesh(
       new THREE.IcosahedronGeometry(1.36, 1),
-      new THREE.MeshBasicMaterial({ color: '#D8B56D', wireframe: true, transparent: true, opacity: 0.42 }),
+      new THREE.MeshBasicMaterial({ color: '#E6A23C', wireframe: true, transparent: true, opacity: 0.42 }),
     );
     coreGroup.add(coreCage);
 
@@ -178,7 +178,7 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
       const orb = new THREE.Mesh(
         new THREE.OctahedronGeometry(0.42, 1),
         new THREE.MeshPhysicalMaterial({
-          color: '#1746A2',
+          color: '#C94F16',
           roughness: 0.2,
           metalness: 0.35,
           clearcoat: 0.9,
@@ -199,7 +199,7 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
       const points = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(x, -0.45, z)];
       const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
       const lineMat = new THREE.LineBasicMaterial({
-        color: '#C7BFA9',
+        color: '#D6BEA5',
         transparent: true,
         opacity: 0.75,
       });
@@ -273,10 +273,10 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
         entry.orb.rotation.y = t * 0.7 + idx;
         entry.orb.position.y = (isActive ? 0.45 : 0.15) + Math.sin(t * 1.8 + idx) * 0.08;
         const orbMat = entry.orb.material as THREE.MeshPhysicalMaterial;
-        orbMat.color.set(isActive ? '#B88A3B' : '#1746A2');
+        orbMat.color.set(isActive ? '#E6A23C' : '#C94F16');
         entry.group.scale.setScalar(THREE.MathUtils.lerp(entry.group.scale.x, isActive ? 1.16 : 0.96, 0.08));
         const haloMat = entry.halo.material as THREE.MeshStandardMaterial;
-        haloMat.emissive.set(isActive ? '#B88A3B' : '#000000');
+        haloMat.emissive.set(isActive ? '#E6A23C' : '#000000');
         haloMat.emissiveIntensity = isActive ? 0.35 : 0;
       });
 
@@ -301,9 +301,9 @@ export function NeuralStudio3D({ activeZoneId, onSelectZone }: NeuralStudio3DPro
   }, []);
 
   return (
-    <div className="relative h-[380px] w-full overflow-hidden rounded-2xl border border-[#D2CBB9] bg-[#F3EFE6] shadow-sm sm:h-[440px]">
+    <div className="relative h-[380px] w-full overflow-hidden rounded-2xl border border-[#DEC9B4] bg-[#F7E8D4] shadow-sm sm:h-[440px]">
       <div ref={mountRef} className="h-full w-full" aria-label="Interactive 3D AI Systems Architecture" />
-      <div className="pointer-events-none absolute bottom-3 left-3 rounded-lg border border-[#D2CBB9] bg-white/90 px-3 py-1 font-mono text-[11px] font-medium text-[#525D70] backdrop-blur-sm">
+      <div className="pointer-events-none absolute bottom-3 left-3 rounded-lg border border-[#DEC9B4] bg-white/90 px-3 py-1 font-mono text-[11px] font-medium text-[#6C5B50] backdrop-blur-sm">
         Drag to orbit · Click any 3D domain node to inspect systems
       </div>
     </div>

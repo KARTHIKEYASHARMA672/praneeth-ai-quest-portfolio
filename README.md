@@ -23,7 +23,7 @@
 | **Live Production URL** | [https://praneeth-ai-quest-portfolio.vercel.app](https://praneeth-ai-quest-portfolio.vercel.app) |
 | **GitHub Repository** | [`KARTHIKEYASHARMA672/praneeth-ai-quest-portfolio`](https://github.com/KARTHIKEYASHARMA672/praneeth-ai-quest-portfolio) |
 | **Frontend Stack** | React 19 · TypeScript · Vite 8 · Tailwind CSS v4 · Three.js WebGL2 · React Router 7 |
-| **Color System** | **Sapphire & Champagne** (`#1746A2` / `#FAF8F4` / `#102A56` / `#B88A3B` — `colours for websites` skill) |
+| **Color System** | **Orange & Milk** (`#C94F16` / `#FFF7EC` / `#352219` / `#E6A23C` — `colours for websites` skill #3) |
 | **Catalog Coverage** | **40 AI & 3D Software Projects** (`32` Live Hosted Apps + `8` Local/GitHub Source Systems, zero pure ECE hardware clutter) |
 | **Verification** | `tsc -b` (0 errors) · `oxlint` (0 warnings/errors) · `vite build` · Playwright WebGL2 (0 console/page/HTTP errors) |
 
@@ -43,7 +43,7 @@ All 7 views below were rendered and verified in headless Chromium WebGL2 (`1440�
 
 | View | Preview | Highlights |
 | :--- | :---: | :--- |
-| **01 — Executive Overview & Interactive 3D Studio (`/`)** | ![Overview and 3D Studio](./screenshots/01_overworld_3d.png) | Recruiter-first hero highlighting job availability + an interactive Three.js WebGL2 Sapphire & Champagne 3D AI Systems Architecture sculpture with clickable domain nodes. |
+| **01 — Executive Overview & Interactive 3D Studio (`/`)** | ![Overview and 3D Studio](./screenshots/01_overworld_3d.png) | Recruiter-first hero highlighting job availability + an interactive Three.js WebGL2 Orange & Milk 3D AI Systems Architecture sculpture with clickable domain nodes. |
 | **02 — All GitHub & AI Projects (`/projects`)** | ![Projects Directory](./screenshots/02_projects_armory.png) | Searchable, filterable directory of **40 AI & 3D software projects** (`32` live hosted + `8` local/GitHub source), each with full descriptions, stack tags, and live/source links. |
 | **03 — Case Study Dossier (`/projects/:slug`)** | ![Project Case Study](./screenshots/03_project_dossier.png) | Technical breakdown, system architecture summary, verified engineering highlights, hosted demo button, and GitHub repository link. |
 | **04 — AI Engineering Experience (`/experience`)** | ![Experience Page](./screenshots/04_experience.png) | Engineering timeline covering autonomous systems, the 750+ GitHub AI Agent Skills Ecosystem, production AI pipelines, hackathons, and verified credentials. |
